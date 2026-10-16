@@ -1,4 +1,5 @@
-resource "azurerm_resource_group" "example" {
-  name     = "nimbus-rg"
-  location = "South Africa North"
+resource "azurerm_resource_group" "rg" {
+  name     = "${var.project_name}-rg"
+  location = var.location
+  tags = var.tags
 }
