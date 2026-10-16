@@ -1,8 +1,8 @@
 resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "${var.project_name}-aks"
+  name                = local.aks_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  dns_prefix          = "${var.project_name}aks"
+  dns_prefix          = local.aks_dns_prefix
 
   node_provisioning_profile {
     mode = "Manual"
